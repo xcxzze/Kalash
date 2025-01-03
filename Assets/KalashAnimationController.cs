@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class KalashAnimationController : MonoBehaviour
 {
+    [SerializeField] private XRGrabControl control;
+
     [SerializeField] private Animator safetyCatchAnimator;
     [SerializeField] private Animator chargingHandleAnimator;
     [SerializeField] private Animator detentLeverAnimator;
@@ -59,6 +61,15 @@ public class KalashAnimationController : MonoBehaviour
         isDetentLeverActivate = !isDetentLeverActivate;
 
         detentLeverAnimator.SetBool("IsDetentLeverActivate", isDetentLeverActivate);
+
+        if (isDetentLeverActivate == true)
+        {
+            control.EnableGrab();
+        }
+        else
+        {
+            control.DisableGrab();
+        }
     }
 
 }
