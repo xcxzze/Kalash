@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class KalashAnimationController : MonoBehaviour
 {
-    [SerializeField] private XRGrabControl control;
+    [SerializeField] private XRGrabControl dustCoverСontrol;
 
     [SerializeField] private Animator safetyCatchAnimator;
     [SerializeField] private Animator chargingHandleAnimator;
@@ -34,26 +34,9 @@ public class KalashAnimationController : MonoBehaviour
         else
         {
             isChargingHandleActive = !isChargingHandleActive;
-
+            
             chargingHandleAnimator.SetBool("IsChargingHandleActive", isChargingHandleActive);
         }
-    }
-
-    private IEnumerator ResetChargingHandleFail()
-    {
-        // Ждем один кадр, чтобы анимация начала проигрываться
-        yield return null;
-
-        // Проверяем состояние анимации
-        AnimatorStateInfo animationState;
-        do
-        {
-            animationState = chargingHandleAnimator.GetCurrentAnimatorStateInfo(0);
-            yield return null;
-        } while (animationState.IsName("ChargingHandleFail") && animationState.normalizedTime < 1.0f);
-
-        // Сбрасываем флаг после завершения анимации
-        chargingHandleAnimator.SetBool("IsChargingHandleFail", false);
     }
 
     public void DetentLeverAnimation(SelectEnterEventArgs args)      // фиксирующий рычаг пылезащитного чехла
@@ -64,12 +47,28 @@ public class KalashAnimationController : MonoBehaviour
 
         if (isDetentLeverActivate == true)
         {
-            control.EnableGrab();
+            dustCoverСontrol.EnableGrab();
         }
         else
         {
-            control.DisableGrab();
+            dustCoverСontrol.DisableGrab();
         }
     }
 
+    private IEnumerator ResetChargingHandleFail()
+    {
+        yield return null;
+
+        AnimatorStateInfo animationState;
+
+        do
+        {
+            animationState = chargingHandleAnimator.GetCurrentAnimatorStateInfo(0);
+            yield return null;
+        }
+        while (animationState.IsName("ChargingHandleFail") && animationState.normalizedTime < 1.0f);
+        {
+            chargingHandleAnimator.SetBool("IsChargingHandleFail", false);
+        }
+    }
 }
