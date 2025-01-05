@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class KalashAnimationController : MonoBehaviour
 {
+    [SerializeField] private XRSocketInteractor socketInteractorDustCover;
+
     [SerializeField] private XRGrabControl dustCover—ontrol;
 
     [SerializeField] private Animator safetyCatchAnimator;
@@ -43,16 +46,21 @@ public class KalashAnimationController : MonoBehaviour
     {
         isDetentLeverActivate = !isDetentLeverActivate;
 
-        detentLeverAnimator.SetBool("IsDetentLeverActivate", isDetentLeverActivate);
-
         if (isDetentLeverActivate == true)
         {
             dustCover—ontrol.EnableGrab();
         }
-        else
+        
+        if (socketInteractorDustCover.hasSelection == true && isDetentLeverActivate == false)
         {
             dustCover—ontrol.DisableGrab();
         }
+        else
+        {
+            isDetentLeverActivate = true;
+        }
+
+        detentLeverAnimator.SetBool("IsDetentLeverActivate", isDetentLeverActivate);
     }
 
     private IEnumerator ResetChargingHandleFail()

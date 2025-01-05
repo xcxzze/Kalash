@@ -15,10 +15,10 @@ MonoBehaviour:
   m_LayerNames:
   - Default
   - CarrierSpring
-  - DetentLever
+  - DustCover
   - Magazine
-  - 
-  - 
+  - ChargingHandle
+  - Bolt
   - 
   - 
   - 
