@@ -5,13 +5,13 @@ public class XRGrabControl : MonoBehaviour
 {
     private XRGrabInteractable grabInteractable;
     private Rigidbody rigidbody;
-    private OutlineControl outlineControl;
+    private OutlineControlKalash outlineControl;
 
     void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         rigidbody = GetComponent<Rigidbody>();
-        outlineControl = GetComponent<OutlineControl>();
+        outlineControl = GetComponent<OutlineControlKalash>();
 
         DisableGrab();
     }

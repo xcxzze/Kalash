@@ -24,7 +24,8 @@ Shader "Custom/Outline Fill" {
     Pass {
       Name "Fill"
       Cull Off
-      ZTest [_ZTest]
+      //ZTest [_ZTest]
+      ZTest LEqual
       ZWrite Off
       Blend SrcAlpha OneMinusSrcAlpha
       ColorMask RGB
