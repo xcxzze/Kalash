@@ -1,13 +1,13 @@
 //using TMPro;
 //using UnityEngine;
-////using Valve.VR.Extras;
+//using Valve.VR.Extras;
 
 //public class LaserPointerOutliner : MonoBehaviour
 //{
 //    [SerializeField] private GameObject panel;
 //    [SerializeField] private OutlinableManager outlinableManager;
 
-//    //private SteamVR_LaserPointer laserPointer;
+//    private SteamVR_LaserPointer laserPointer;
 //    private TMP_Text textPanel;
 //    private Outlinable lastChosenDetail;
 
@@ -19,21 +19,21 @@
 //    public void OnEnable()
 //    {
 //        textPanel = panel.GetComponentInChildren<TMP_Text>();
-//        //laserPointer = GetComponent<SteamVR_LaserPointer>();
+//        laserPointer = GetComponent<SteamVR_LaserPointer>();
 
-//        //laserPointer.PointerIn += SelectDetailWithPointer;
-//        //laserPointer.PointerOut += DeselectDetailWithPointer;
-//        //laserPointer.PointerClick += ChooseDetailWithPointer;
+//        laserPointer.PointerIn += SelectDetailWithPointer;
+//        laserPointer.PointerOut += DeselectDetailWithPointer;
+//        laserPointer.PointerClick += ChooseDetailWithPointer;
 //    }
 
 //    public void OnDisable()
 //    {
-//        //laserPointer.PointerIn -= SelectDetailWithPointer;
-//        //laserPointer.PointerOut -= DeselectDetailWithPointer;
-//        //laserPointer.PointerClick -= ChooseDetailWithPointer;
+//        laserPointer.PointerIn -= SelectDetailWithPointer;
+//        laserPointer.PointerOut -= DeselectDetailWithPointer;
+//        laserPointer.PointerClick -= ChooseDetailWithPointer;
 //    }
 
-//    public void SelectDetailWithPointer(object obj/*, PointerEventArgs e*/)
+//    public void SelectDetailWithPointer(object obj, PointerEventArgs e)
 //    {
 //        if (e.target.CompareTag("Outlinable"))
 //        {
@@ -43,7 +43,7 @@
 //        }
 //    }
 
-//    public void DeselectDetailWithPointer(object obj/*, PointerEventArgs e*/)
+//    public void DeselectDetailWithPointer(object obj, PointerEventArgs e)
 //    {
 //        if (e.target.CompareTag("Outlinable"))
 //        {
@@ -53,7 +53,7 @@
 //        }
 //    }
 
-//    public void ChooseDetailWithPointer(object obj/*, PointerEventArgs e*/)
+//    public void ChooseDetailWithPointer(object obj, PointerEventArgs e)
 //    {
 //        if (e.target.CompareTag("Outlinable"))
 //        {

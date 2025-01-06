@@ -17,6 +17,7 @@ public class OutlinableManager : MonoBehaviour
         {
             outlinable.outline = outlinable.GetComponent<Outline>();
             outlinable.color = outlinable.outline.OutlineColor;
+            outlinable.outline.enabled = false;
             outlinable.isChangable = true;
             outlinable.isOnceUnchangable = false;
 
