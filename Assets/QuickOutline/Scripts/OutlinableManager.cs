@@ -8,11 +8,19 @@ public class OutlinableManager : MonoBehaviour
     private VehicleInfoDeserializer vehicleInfoDeserializer = new();
     private Information info;
 
+    public GameObject vehicleRoot;
+
     public void Awake()
     {
         info = vehicleInfoDeserializer.DeserializeInformation();
 
-        outlinables = FindObjectsOfType<MonoBehaviour>().OfType<Outlinable>().ToList();
+        if (vehicleRoot == null)
+        {
+            return;
+        }
+
+        outlinables = vehicleRoot.GetComponentsInChildren<Outlinable>().ToList();
+
         foreach (var outlinable in outlinables)
         {
             outlinable.outline = outlinable.GetComponent<Outline>();
@@ -21,8 +29,16 @@ public class OutlinableManager : MonoBehaviour
             outlinable.isChangable = true;
             outlinable.isOnceUnchangable = false;
 
-            outlinable.info = info.vehicles.FirstOrDefault(q => q.Key == outlinable.transform.parent.name)
-                .Value.parts.FirstOrDefault(q => q.Key == outlinable.transform.name).Value;
+            string childName = outlinable.transform.name;
+
+            if (info.vehicles.ContainsKey(vehicleRoot.name))
+            {
+                var vehicle = info.vehicles[vehicleRoot.name];
+                if (vehicle.parts.ContainsKey(childName))
+                {
+                    outlinable.info = vehicle.parts[childName];
+                }
+            }
         }
     }
 

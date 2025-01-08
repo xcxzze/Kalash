@@ -55,47 +55,47 @@
 
 //    public void ChooseDetailWithPointer(object obj, PointerEventArgs e)
 //    {
-//        if (e.target.CompareTag("Outlinable"))
+//if (e.target.CompareTag("Outlinable"))
+//{
+//    var selectedDetail = outlinableManager.FindOutlinableByName(e.target.name);
+
+//    if (selectedDetail != null)
+//    {
+//        selectedDetail.outline.OutlineColor = Color.green;
+//        selectedDetail.isChangable = false;
+//        selectedDetail.outline.enabled = true;
+
+//        if (lastChosenDetail != null)
 //        {
-//            var selectedDetail = outlinableManager.FindOutlinableByName(e.target.name);
+//            lastChosenDetail.outline.OutlineColor = lastChosenDetail.color;
+//            lastChosenDetail.isChangable = true;
+//            lastChosenDetail.outline.enabled = false;
 
-//            if (selectedDetail != null)
+//            if (lastChosenDetail == selectedDetail)
 //            {
-//                selectedDetail.outline.OutlineColor = Color.green;
-//                selectedDetail.isChangable = false;
-//                selectedDetail.outline.enabled = true;
-
-//                if (lastChosenDetail != null)
-//                {
-//                    lastChosenDetail.outline.OutlineColor = lastChosenDetail.color;
-//                    lastChosenDetail.isChangable = true;
-//                    lastChosenDetail.outline.enabled = false;
-
-//                    if (lastChosenDetail == selectedDetail)
-//                    {
-//                        lastChosenDetail.isOnceUnchangable = true;
-//                        lastChosenDetail = null;
-//                        panel.SetActive(false);
-
-//                        return;
-//                    }
-//                }
-//                textPanel.text = selectedDetail.info;
-//                lastChosenDetail = selectedDetail;
-//                panel.SetActive(true);
-//            }
-//        }
-//        else
-//        {
-//            if (lastChosenDetail != null)
-//            {
-//                lastChosenDetail.outline.OutlineColor = lastChosenDetail.color;
-//                lastChosenDetail.isChangable = true;
-//                lastChosenDetail.outline.enabled = false;
-
+//                lastChosenDetail.isOnceUnchangable = true;
 //                lastChosenDetail = null;
 //                panel.SetActive(false);
+
+//                return;
 //            }
 //        }
+//        textPanel.text = selectedDetail.info;
+//        lastChosenDetail = selectedDetail;
+//        panel.SetActive(true);
+//    }
+//}
+//else
+//{
+//    if (lastChosenDetail != null)
+//    {
+//        lastChosenDetail.outline.OutlineColor = lastChosenDetail.color;
+//        lastChosenDetail.isChangable = true;
+//        lastChosenDetail.outline.enabled = false;
+
+//        lastChosenDetail = null;
+//        panel.SetActive(false);
+//    }
+//}
 //    }
 //}

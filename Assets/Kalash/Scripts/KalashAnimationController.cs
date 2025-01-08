@@ -17,6 +17,8 @@ public class KalashAnimationController : MonoBehaviour
     private bool isChargingHandleActive = false;
     private bool isDetentLeverActivate = false;
 
+    public bool IsDetentLeverActivate => isDetentLeverActivate;
+
     public void SafetyÑatchAnimation(SelectEnterEventArgs args)     // ïğåäîõğàíèòåëü
     {
         if (isChargingHandleActive != true)

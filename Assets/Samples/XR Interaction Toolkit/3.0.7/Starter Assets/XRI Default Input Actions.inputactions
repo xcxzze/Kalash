@@ -452,6 +452,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ObjectRotator",
+                    "type": "Value",
+                    "id": "22a09e89-17dc-43da-8944-dcead9a3946a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ActivateRotation",
+                    "type": "Button",
+                    "id": "958ffcb4-dc42-4ebc-97f4-1741185dedc7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -859,6 +877,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Thumbstick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba85c4e3-7ca2-4cc1-97f0-0978aeec7b97",
+                    "path": "<XRController>{LeftHand}/joystick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ObjectRotator",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff1057cc-0a40-4b37-817e-28dea9036979",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateRotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1523,6 +1563,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "RotateObject",
+                    "type": "Value",
+                    "id": "9a075fa8-1f73-4432-9606-d0e0ad974af2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1930,6 +1979,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Thumbstick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dccb3568-3bdb-4904-98f2-defce9b829ff",
+                    "path": "<XRController>{RightHand}/joystick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
